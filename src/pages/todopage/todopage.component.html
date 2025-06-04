@@ -53,7 +53,7 @@
           <li class="text-lg text-gray-700">ID: {{ $index+1 }}</li>
           <li class="text-lg text-gray-700">Title: {{ todo.title }}</li>
           <li class="text-lg text-gray-700">Desc: {{ todo.desc }}</li>
-          <li class="text-lg text-gray-700">status: {{ todo.status }}</li>
+          <li class="text-lg text-gray-700">Edited: {{ todo.status?'yes':'no' }}</li>
         </div>
 
         <div class="flex flex-col gap-2 items-center">
