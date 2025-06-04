@@ -77,7 +77,7 @@ ngOnChanges() {
    
     this.toggle = true;
      this.index=i;
-    this.todos[i].status = !this.todos[i].status;
+    this.todos[i].status = true;
     // alert('update todo triggered');
     console.log(this.todos);
   }
