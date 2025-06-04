@@ -1,0 +1,11 @@
+
+<div class="flex flex-col max-w-screen min-h-screen relative  bg-gray-100 remove-scrollbar">
+<app-header [message]="parentMessage"></app-header>
+ <main class="flex-grow bg-blue-400 mt-16">
+    <app-todopage></app-todopage>
+    <!-- <app-about></app-about> -->
+    </main>
+<app-footer/>
+<router-outlet></router-outlet>
+
+</div>

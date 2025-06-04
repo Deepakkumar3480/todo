@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* Internet Explorer 10+ */
+  overflow: auto;
+}
+
+*::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Opera */
+}

@@ -1,0 +1,81 @@
+<div class="w-[100%] h-[80%]  flex flex-col items-center gap-4 pt-4">
+  <!-- todo create page  -->
+  <div class="w-[50%] h-[40%] bg-gray-400 flex flex-col gap-2 p-2">
+    <br />
+    <div class="w-[100%]">
+      <form #todoForm="ngForm" (ngSubmit)="addTodo()" class="w-full"></form>
+      <input
+        class="w-[100vw]"
+        type="text"
+        [(ngModel)]="newTodo.title"
+        class="w-full p-2 outline-none px-1"
+        placeholder="enter you title"
+        required
+      />
+      <br />
+      <br />
+      <input
+        type="text"
+        [(ngModel)]="newTodo.desc"
+        class="w-full p-2 outline-none px-1"
+        placeholder="Enter todo description"
+        required
+      />
+      <br />
+    </div>
+    
+    <div class="flex gap-1 px-1 items-center justify-center">
+      <div>
+        <button class="bg-green-500 rounded-md px-1 py-2" (click)="addTodo()">
+          add todo
+        </button>
+      </div>
+    </div>
+    
+  </div>
+  
+ <!-- updated todo popup  -->
+  @if(toggle){
+    <div class="w-[40%] h-[35%] absolute top-[200px] left-[450px] bg-gray-200 z-10 flex flex-col gap-2 p-1">
+        <h1 class="text-2xl text-blue-500 font-bold text-center">Your Todos</h1>
+      <input type="text" [(ngModel)]="title" class="w-full  outline-none px-2 py-2" placeholder="Enter you new title" required/>
+      <input type="text" [(ngModel)]="desc" class="w-full  outline-none px-2 py-2" placeholder="Enter you updated desc" />
+      <button class="px-3 py-2 bg-green-300" (click)="setupdatedValue()">update</button>
+      <button class="px-3 py-2 bg-red-300" (click)="existpopup()" >exist please</button>
+    </div>
+  }
+ <!-- display here the todos  -->
+  <div class="w-[90vw] h-fit flex items-center justify-center mb-24">
+    <ul class="list-none flex flex-wrap gap-2 p-4">
+      @for(todo of todos; track $index){
+      <div class="w-[20vw] h-fit gap-2 flex justify-between bg-blue-300 rounded-lg p-2">
+        <div class="flex flex-col">
+          <li class="text-lg text-gray-700">ID: {{ $index+1 }}</li>
+          <li class="text-lg text-gray-700">Title: {{ todo.title }}</li>
+          <li class="text-lg text-gray-700">Desc: {{ todo.desc }}</li>
+          <li class="text-lg text-gray-700">status: {{ todo.status }}</li>
+        </div>
+
+        <div class="flex flex-col gap-2 items-center">
+          <div>
+            <button
+            class="bg-green-500 rounded-md px-1 py-2"
+            (click)="updateTodo($index)"
+          >
+            update
+          </button>
+          </div>
+          <div>
+            <button
+            class="bg-red-500 rounded-md px-1 py-2"
+            (click)="removeTodo($index)"
+          >
+            remove
+          </button>
+          </div>
+        </div>
+      </div>
+      }
+    </ul>
+  </div>
+</div>
