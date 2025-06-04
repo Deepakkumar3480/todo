@@ -66,6 +66,7 @@ ngOnChanges() {
     console.log(this.todos)
 
   }
+  
 
   removeTodo(i:number){
   this.todos.splice(i, 1);

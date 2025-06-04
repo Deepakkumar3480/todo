@@ -36,7 +36,7 @@
   
  <!-- updated todo popup  -->
   @if(toggle){
-    <div class="w-[40%] h-[35%] absolute top-[200px] left-[450px] bg-gray-200 z-10 flex flex-col gap-2 p-1">
+    <div class="w-[70%] h-[35%] md:w-[40%] md:h-[35%] absolute md:top-[200px] md:left-[450px] bg-gray-200 z-10 flex flex-col gap-2 p-1">
         <h1 class="text-2xl text-blue-500 font-bold text-center">Your Todos</h1>
       <input type="text" [(ngModel)]="title" class="w-full  outline-none px-2 py-2" placeholder="Enter you new title" required/>
       <input type="text" [(ngModel)]="desc" class="w-full  outline-none px-2 py-2" placeholder="Enter you updated desc" />
