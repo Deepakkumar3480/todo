@@ -69,7 +69,8 @@ ngOnChanges() {
 
   removeTodo(i:number){
   this.todos.splice(i, 1);
-    alert('remove todo triggered');
+    // alert('remove todo triggered');
+    console.log('remove successfully')
   }
 
   updateTodo(i:number){
